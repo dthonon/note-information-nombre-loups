@@ -1,0 +1,21 @@
+---
+---
+title: "Analyse des données CMR hiver"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r read_data, include=FALSE}
+# donnees capture-recapture hiver 1997/1998 -> hiver 2018/2019
+dataloup <- as.data.frame(readRDS("../dat/cmrlouphiver.rds"))
+```
+
+```{r results='asis'}
+dataloup[dataloup == 2] <- 1
+kable(colSums(dataloup))
+```
+
