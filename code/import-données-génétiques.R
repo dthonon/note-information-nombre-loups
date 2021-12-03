@@ -22,4 +22,4 @@ indices <- tibble(ligne = raw_input) %>%
 
 indices[is.na(indices["N_dpt"]),]
 
-write.csv(indices, "données_genetiques_2021.csv")
+write.csv(indices, "dat/données_genetiques_2021.csv")
